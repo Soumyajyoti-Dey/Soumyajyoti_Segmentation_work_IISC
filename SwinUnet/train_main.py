@@ -189,7 +189,7 @@ net = ViT_seg(config, img_size=img_size, num_classes=num_classes).cuda()
 
 criterion = nn.CrossEntropyLoss()
 dice_loss = DiceLoss(num_classes)
-optimizer = optim.SGD(net.parameters(), lr=0.05, momentum=0.9, weight_decay=0.0001)
+optimizer = optim.SGD(net.parameters(), lr=0.0001, momentum=0.9, weight_decay=0.0001)
 
 if weight_load!= None:
     state = torch.load(weight_load ,map_location=lambda storage, loc: storage.cuda())      
